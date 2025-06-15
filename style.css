@@ -1,133 +1,99 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #222;
   margin: 0;
-  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f4f8;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: start;
   min-height: 100vh;
+  padding-top: 60px;
 }
 
-.container {
-  max-width: 400px;
-  width: 90%;
-  margin: 20px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  text-align: center;
-}
-
-input, button {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-button {
-  cursor: pointer;
-  background-color: #4caf50;
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #2c3e50;
   color: white;
-  border: none;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-  max-height: 150px;
-  overflow-y: auto;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-ul li {
-  padding: 8px;
-  border-bottom: 1px solid #eee;
-  cursor: pointer;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-ul li:hover {
-  background-color: #f1f1f1;
-}
-
-ul li button {
-  width: 25px;
-  height: 25px;
-  padding: 0;
-  margin-left: 10px;
-  background-color: #e74c3c;
+#favBtn {
+  background: none;
   border: none;
-  border-radius: 50%;
-  color: white;
-  font-weight: bold;
+  font-size: 24px;
   cursor: pointer;
-  flex-shrink: 0;
+  color: gold;
 }
 
-.hidden {
-  display: none;
-}
-
-#loading {
-  position: relative;
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  max-width: 500px;
   width: 100%;
-  height: 8px;
-  background-color: #ddd;
-  margin: 10px 0;
-  overflow: hidden;
-  border-radius: 5px;
+  text-align: center;
 }
 
-#loading-bar {
-  position: absolute;
-  height: 100%;
-  width: 0%;
-  background-color: #4caf50;
-  transition: width 0.2s linear;
-  border-radius: 5px;
+h1 {
+  margin: 0;
 }
 
-body.dark {
-  background-color: #121212;
-  color: #ddd;
+input {
+  width: 80%;
+  padding: 10px;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: block;
 }
 
-body.dark .container {
-  background-color: #1e1e1e;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+button {
+  padding: 10px 20px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-body.dark input, 
-body.dark button {
-  border: 1px solid #444;
-  background-color: #333;
-  color: #ddd;
+button:hover {
+  background-color: #219150;
 }
 
-body.dark button:hover {
-  background-color: #3a9d3a;
+#result {
+  margin-top: 20px;
+  text-align: left;
 }
 
-body.dark ul {
-  border: 1px solid #444;
+.calculator {
+  margin-top: 30px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
 }
 
-body.dark ul li:hover {
-  background-color: #333;
+#favoritesPanel {
+  margin-top: 30px;
+  background-color: #fffbea;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+#favoritesList li {
+  margin-bottom: 10px;
+}
+
+.removeFav {
+  margin-left: 10px;
+  color: red;
+  cursor: pointer;
 }
