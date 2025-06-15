@@ -2,46 +2,35 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>DiabeticUltra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Glucopedia</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>DiabeticUltra</h1>
-
-    <form id="product-form">
-      <input type="text" id="product" placeholder="Produkt" required />
-      <button type="button" id="show-suggestions-btn">Vorgeschlagene Produkte anzeigen</button>
-      <input type="text" id="brand" placeholder="Marke" required />
-      <input type="number" id="grams" placeholder="Gramm auf dem Teller" min="1" required />
-
-      <button type="submit">Berechnen</button>
-    </form>
-
-    <ul id="suggestions"></ul>
-
-    <div id="loading" class="hidden">
-      <div id="loading-bar"></div>
-    </div>
-
-    <div id="result" class="hidden">
-      <p>Kohlenhydrate pro 100g: <span id="carbs-per-100g"></span> g</p>
-      <p>Gewicht: <span id="input-grams"></span> g</p>
-      <p>Gesamte Kohlenhydrate: <span id="carbs-total"></span> g</p>
-      <button id="save-favorite">Favorit speichern</button>
-    </div>
-
-    <h2>Favoriten</h2>
-    <ul id="favorites-list"></ul>
-
-    <button id="toggle-theme">Dunkelmodus an/aus</button>
-
-    <h2>Tagesverlauf</h2>
-    <canvas id="day-chart" width="400" height="200"></canvas>
+  <div class="topbar">
+    <h1>Glucopedia</h1>
+    <button id="favBtn" onclick="toggleFavorites()">⭐</button>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <div class="container">
+    <input type="text" id="searchInput" placeholder="Gib ein Produkt ein...">
+    <button onclick="searchFood()">Suchen</button>
+    <div id="result"></div>
+
+    <div class="calculator">
+      <h3>Kohlenhydrat-Rechner</h3>
+      <input type="number" id="gramsInput" placeholder="Gramm eingeben">
+      <input type="number" id="carbsPer100Input" placeholder="KH pro 100g">
+      <button onclick="calculateCarbs()">Berechnen</button>
+      <p id="carbResult"></p>
+    </div>
+
+    <div id="favoritesPanel" style="display:none">
+      <h3>⭐ Favoriten</h3>
+      <ul id="favoritesList"></ul>
+    </div>
+  </div>
+
   <script src="main.js"></script>
 </body>
 </html>
