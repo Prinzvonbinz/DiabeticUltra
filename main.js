@@ -1,10 +1,11 @@
+// 🧠 API Keys hier eintragen
 const NUTRITIONIX_APP_ID = '09446b3a';
 const NUTRITIONIX_API_KEY = '8f92318bd0ffeda0ff1ca5cf27dd5dbb';
 const SPOONACULAR_API_KEY = 'DEIN_SPOONACULAR_API_KEY';
 
 async function searchFood() {
   const query = document.getElementById('searchInput').value;
-  document.getElementById('result').innerHTML = 'Suche läuft...';
+  document.getElementById('result').innerHTML = '🔄 Suche läuft...';
 
   let data = await searchNutritionix(query);
   if (!data) data = await searchOpenFoodFacts(query);
@@ -12,6 +13,7 @@ async function searchFood() {
 
   if (data) {
     showResult(data);
+    localStorage.setItem('lastResult', JSON.stringify(data));
   } else {
     document.getElementById('result').innerHTML = '❌ Kein Ergebnis gefunden.';
   }
@@ -42,7 +44,7 @@ function calculateCarbs() {
   }
 }
 
-// Favoriten
+// FAVORITEN
 function addToFavorites(item) {
   let favs = JSON.parse(localStorage.getItem('glucoFavorites') || '[]');
   if (!favs.find(f => f.name === item.name)) {
@@ -76,7 +78,20 @@ function removeFavorite(index) {
   loadFavorites();
 }
 
-// API-Funktionen (wie zuvor) ...
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+  localStorage.setItem('darkmode', document.body.classList.contains("dark"));
+}
 
-// ↓ Nutritionix, OpenFoodFacts, Spoonacular-Funktionen wie in vorheriger Version ↓
-// (aus Platzgründen hier weggelassen, bitte einfügen aus letzter Version)
+window.onload = () => {
+  if (localStorage.getItem('darkmode') === 'true') {
+    document.body.classList.add('dark');
+  }
+
+  const last = localStorage.getItem('lastResult');
+  if (last) {
+    showResult(JSON.parse(last));
+  }
+};
+
+// API-Funktionen (wie zuvor – Nutritionix, OpenFoodFacts, Spoonacular) kannst du von der vorherigen Version übernehmen.
