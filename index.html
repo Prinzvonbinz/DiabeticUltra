@@ -7,28 +7,33 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="topbar">
-    <h1>Glucopedia</h1>
-    <button id="favBtn" onclick="toggleFavorites()">⭐</button>
-  </div>
+  <div class="app">
+    <header>
+      <h1>Glucopedia</h1>
+      <div class="header-icons">
+        <button id="darkModeToggle" onclick="toggleDarkMode()">🌓</button>
+        <button id="favBtn" onclick="toggleFavorites()">⭐</button>
+      </div>
+    </header>
 
-  <div class="container">
-    <input type="text" id="searchInput" placeholder="Gib ein Produkt ein...">
-    <button onclick="searchFood()">Suchen</button>
-    <div id="result"></div>
+    <main>
+      <input type="text" id="searchInput" placeholder="Was möchtest du wissen?">
+      <button onclick="searchFood()">🔍 Suchen</button>
+      <div id="result"></div>
 
-    <div class="calculator">
-      <h3>Kohlenhydrat-Rechner</h3>
-      <input type="number" id="gramsInput" placeholder="Gramm eingeben">
-      <input type="number" id="carbsPer100Input" placeholder="KH pro 100g">
-      <button onclick="calculateCarbs()">Berechnen</button>
-      <p id="carbResult"></p>
-    </div>
+      <section class="calculator">
+        <h3>Kohlenhydrat-Rechner</h3>
+        <input type="number" id="gramsInput" placeholder="Gramm eingeben">
+        <input type="number" id="carbsPer100Input" placeholder="KH pro 100g">
+        <button onclick="calculateCarbs()">Berechnen</button>
+        <p id="carbResult"></p>
+      </section>
 
-    <div id="favoritesPanel" style="display:none">
-      <h3>⭐ Favoriten</h3>
-      <ul id="favoritesList"></ul>
-    </div>
+      <section id="favoritesPanel" style="display:none">
+        <h3>⭐ Favoriten</h3>
+        <ul id="favoritesList"></ul>
+      </section>
+    </main>
   </div>
 
   <script src="main.js"></script>
