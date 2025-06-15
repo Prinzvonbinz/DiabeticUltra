@@ -1,66 +1,63 @@
+:root {
+  --bg: #e9f9f2;
+  --text: #1c1c1c;
+  --card: #ffffff;
+  --accent: #27ae60;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+  --bg: #1e1e1e;
+  --text: #f5f5f5;
+  --card: #2c2c2c;
+  --accent: #2ecc71;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #f0f4f8;
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  min-height: 100vh;
-  padding-top: 60px;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
 }
 
-.topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #2c3e50;
-  color: white;
-  padding: 10px 20px;
+.app {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
-#favBtn {
+.header-icons button {
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 20px;
+  margin-left: 10px;
   cursor: pointer;
-  color: gold;
 }
 
-.container {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-  max-width: 500px;
+input, button {
   width: 100%;
-  text-align: center;
-}
-
-h1 {
-  margin: 0;
-}
-
-input {
-  width: 80%;
   padding: 10px;
-  margin: 10px auto;
+  margin: 8px 0;
+  font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  display: block;
+  box-sizing: border-box;
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #27ae60;
+  background-color: var(--accent);
   color: white;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
 button:hover {
@@ -68,32 +65,135 @@ button:hover {
 }
 
 #result {
+  background: var(--card);
+  padding: 20px;
   margin-top: 20px;
-  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--shadow);
 }
 
 .calculator {
   margin-top: 30px;
-  background-color: #f9f9f9;
+  background: var(--card);
   padding: 15px;
   border-radius: 10px;
-  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px var(--shadow);
 }
 
 #favoritesPanel {
   margin-top: 30px;
-  background-color: #fffbea;
+  background: var(--card);
   padding: 15px;
   border-radius: 10px;
-  text-align: left;
+  box-shadow: 0 2px 8px var(--shadow);
 }
 
 #favoritesList li {
-  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
 }
 
 .removeFav {
+  color: red;
+  cursor: pointer;
+}:root {
+  --bg: #e9f9f2;
+  --text: #1c1c1c;
+  --card: #ffffff;
+  --accent: #27ae60;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+  --bg: #1e1e1e;
+  --text: #f5f5f5;
+  --card: #2c2c2c;
+  --accent: #2ecc71;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+.app {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-icons button {
+  background: none;
+  border: none;
+  font-size: 20px;
   margin-left: 10px;
+  cursor: pointer;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #219150;
+}
+
+#result {
+  background: var(--card);
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+.calculator {
+  margin-top: 30px;
+  background: var(--card);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+#favoritesPanel {
+  margin-top: 30px;
+  background: var(--card);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+
+#favoritesList li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.removeFav {
   color: red;
   cursor: pointer;
 }
